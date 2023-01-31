@@ -33,13 +33,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.16.x
-      - run: cd threejs-block
       - run: npm install
       - run: npm ci
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           # Upload entire repository
+          name: my-artifact
           path: 'build'
   
   deploy:
@@ -53,6 +53,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - uses: actions/download-artifact@v2
+        with:
+          name: my-artifact
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
