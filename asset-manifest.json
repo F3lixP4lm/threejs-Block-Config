@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/threejs-Block-Config/static/css/main.2e8baf69.css",
+    "main.js": "/threejs-Block-Config/static/js/main.1cb224f5.js",
+    "static/js/787.921e7f7a.chunk.js": "/threejs-Block-Config/static/js/787.921e7f7a.chunk.js",
+    "index.html": "/threejs-Block-Config/index.html",
+    "main.2e8baf69.css.map": "/threejs-Block-Config/static/css/main.2e8baf69.css.map",
+    "main.1cb224f5.js.map": "/threejs-Block-Config/static/js/main.1cb224f5.js.map",
+    "787.921e7f7a.chunk.js.map": "/threejs-Block-Config/static/js/787.921e7f7a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e8baf69.css",
+    "static/js/main.1cb224f5.js"
+  ]
+}
