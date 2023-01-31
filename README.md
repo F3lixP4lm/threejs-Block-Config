@@ -1,7 +1,7 @@
 # threejs-Block-Config
 
-Sample app for using bon threejs in react. 
-Positioning and colouring of blocks
+Sample app for using threejs with react. 
+Positioning and colouring of blocks.
 
 ```
 npm start
