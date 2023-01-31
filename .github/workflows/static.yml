@@ -33,6 +33,11 @@ jobs:
       - run: cd threejs-block
       - run: npm install
       - run: npm ci
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          # Upload entire repository
+          path: 'build'
   
   deploy:
     environment:
@@ -48,7 +53,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: '.'
+          path: 'build'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
