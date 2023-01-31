@@ -30,6 +30,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.16.x
+      - run: cd threejs-block
       - run: npm install
       - run: npm ci
   
