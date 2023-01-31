@@ -23,11 +23,18 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   build-and-deploy:
-    runs-on: ubuntu-latest
-    defaults:
+     permissions:
+        pages: write      # to deploy to Pages
+        id-token: write   # to verify the deployment originates from an appropriate source
+     # Deploy to the github-pages environment
+     environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+     runs-on: ubuntu-latest
+     defaults:
       run:
         working-directory: ./threejs-block
-    steps:
+     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -35,8 +42,8 @@ jobs:
           node-version: 16.16.x
       - run: npm ci
       - run: npm run build
-      - name: Deploy 
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+      
         
